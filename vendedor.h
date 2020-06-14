@@ -10,28 +10,30 @@ class Vendedor : public Sistema{
   int Cantidad[102];
   string Producto[102];
   int Precio[102];
+  float n;
 
   public:
   void setMetadatos(int, string, int);
-  void reducirInventario();
   void getLista();
+  int getPrecio(float);
 };
 
 void Vendedor::setMetadatos(int _Cantidad, string _Producto, int _Precio){
-  for(int h=0; h<101; h++){
+  for (int h=0; h<101; h++){
     if(Producto[h] == ""){
       Cantidad[h] = _Cantidad;
       Producto[h] = _Producto;
       Precio[h] = _Precio;
+      h = 102;
     }
     else{
 
     }
-
+  }
 }
 
 void Vendedor::getLista(){
-  for(int h=0; h<51; h++){
+  for(int h=0; h<101; h++){
     if(Producto[h] == ""){
     }
     else{
@@ -41,9 +43,11 @@ void Vendedor::getLista(){
   }
 }
 
-void Vendedor::reducirInventario(){
-  //Cantidad[seleccion] = Cantidad[seleccion]-1;
+int Vendedor::getPrecio(float _n){
+  n = _n;
+  int na;
+  na = _n;
+  return Precio[na];
 }
-
 
 #endif

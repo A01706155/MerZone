@@ -15,11 +15,9 @@ class Sistema{
     Sistema(); //Constructor
     void accion(string, string, string);
     int temporal;
-    int currentuser;
     int logintrue;
     void setLLoginTrue();
     int getLLoginTrue();
-    virtual int getCurrentuser();
 };
 
 Sistema::Sistema(){
@@ -49,8 +47,6 @@ void Sistema::accion(string _action, string _usuario, string _contrasenia){
     for(int h=0; h<51; h++){
       if(usuario[h] == usuario[51] && contrasenia[h] == contrasenia[51]){
         cout<<"Bienvenido/a "<<usuario[h]<<endl;
-        currentuser = h;
-        cout<<currentuser<<endl;
         h = 52;
         logintrue = 1;
       }
@@ -69,10 +65,6 @@ void Sistema::accion(string _action, string _usuario, string _contrasenia){
 
 int Sistema::getLLoginTrue(){
   return logintrue;
-}
-
-int Sistema::getCurrentuser(){
-  return currentuser;
 }
 
 void Sistema::setLLoginTrue(){

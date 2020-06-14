@@ -65,6 +65,9 @@ int main() {
       }
       else{
         usar2->getLista();
+        cout<<"Escribe el numero del producto que quieres de la lista: ";
+        cin>>seleccion;
+        cout<<usar1->comprar(seleccion)<<endl;
       }
     }
   }
